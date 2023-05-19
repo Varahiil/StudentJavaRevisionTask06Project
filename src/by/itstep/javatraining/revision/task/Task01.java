@@ -26,6 +26,15 @@ package by.itstep.javatraining.revision.task;
 
 public class Task01 {
     public static int task01(int number) {
-        return 0;
+        if (number <= 1) {
+            return 0;
+        }
+
+        for (int i = 2; i <= number; i++) {
+            if (number % i == 0) {
+               return i;
+            }
+        }
+        return number;
     }
 }
