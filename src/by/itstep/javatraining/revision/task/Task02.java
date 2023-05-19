@@ -29,6 +29,17 @@ package by.itstep.javatraining.revision.task;
 
 public class Task02 {
     public static boolean task02(int number) {
+        if (number == 1 || number == 2) {
+            return true;
+        }
+        if (number > 3) {
+            while (number % 2 == 0) {
+                if (number == 2) {
+                    return true;
+                }
+                number /= 2;
+            }
+        }
         return false;
     }
 }
