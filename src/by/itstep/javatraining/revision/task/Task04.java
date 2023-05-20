@@ -3,7 +3,7 @@ package by.itstep.javatraining.revision.task;
 /*	Task 04. The Fibonacci Number [число Фибоначчи]
  *
  *	Последовательность Фибоначчи определяется так:
- *	F(1) = 0, F(2) = 1, F(3) = 1, F(4) = 2, F(5) = 3, …, F(n) = F(n−1) + F(n−2).
+ *	F(1) = 0, F(2) = 1, F(3) = 1, F(4) = 2, F(5) = 3, …,
  *	Необходимо по данному числу N определить N-ное число числового ряда Фибоначчи F(N).
  *	Если число задано не верно, то должно быть возвращено число -1.
  *
@@ -40,6 +40,21 @@ package by.itstep.javatraining.revision.task;
 
 public class Task04 {
     public static long task04(int number) {
-        return 0;
+        if (number <= 0) {
+            return -1;
+        }
+
+        if (number == 1){
+            return 0;
+        }
+        long prev = 0;
+        long current = 1;
+
+        for (int i = 3; i <= number; i++) {
+            long next = prev + current;
+            prev = current;
+            current = next;
+        }
+        return current;
     }
 }
